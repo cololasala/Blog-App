@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./pages/Home";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Write from "./pages/Write";
@@ -7,14 +6,15 @@ import NavBar from "./components/NavBar";
 import Single from "./pages/Single";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import "./style.scss";
 
 const Layout = () => {
   return (
-    <>
+    <div className="layout-container">
       <NavBar />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 
