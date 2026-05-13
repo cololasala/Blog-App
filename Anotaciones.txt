@@ -1,0 +1,7 @@
+https://www.youtube.com/watch?v=0aPLk2e2Z3g
+
+creamos el proyecto react con vite npm create vite@latest ./ -- --template react
+
+vamos a utilizar react router dom declarative -> https://reactrouter.com/start/modes#declarative 
+
+para estilos usaremos sass -> npm install sass
