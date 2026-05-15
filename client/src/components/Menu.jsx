@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-
-const Home = () => {
-  const posts: any = [
+const Menu = () => {
+  const posts = [
     {
       id: 1,
       title: "Introducción a React",
@@ -43,29 +41,19 @@ const Home = () => {
         "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1200&auto=format&fit=crop",
     },
   ];
-  return (
-    <div className="home">
-      <div className="posts">
-        {posts.map((post: any) => (
-          <div className="post" key={post.id}>
-            <div className="img">
-              <img src={post.image} alt="post-image" />
-            </div>
-            <div className="content">
-              <Link to={`/post/${post.id}`} className="link">
-                <h1>{post.title}</h1>
-              </Link>
 
-              <p>{post.description}</p>
-              <button className="button-read-more" onClick={() => {}}>
-                Read more
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+  return (
+    <div className="menu">
+      <h1>Other post you may like</h1>
+      {posts.map((post) => (
+        <div className="post" key={post.id}>
+          <img src={post.image} alt="" />
+          <h2>{post.title}</h2>
+          <button className="button-read-more">Read more</button>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Home;
+export default Menu;

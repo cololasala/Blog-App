@@ -1,7 +1,12 @@
-import React from "react";
+import Logo from "../assets/logo.png";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer>
+      <img src={Logo} alt="logo-image" />
+      <span>Page created by Luciano Lasala</span>
+    </footer>
+  );
 };
 
 export default Footer;

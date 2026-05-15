@@ -57,10 +57,8 @@ $errorRed: #d54a46;
     .layout-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-
+      padding: 30px 200px;
       .navbar {
-        width: 1024px;
         .container {
           display: flex;
           flex-direction: row;
@@ -102,20 +100,180 @@ $errorRed: #d54a46;
               &:hover {
                 background-color: white;
                 color: $lightgren;
-
                 .write-link {
                   color: $lightgren;
                   text-decoration: none;
+                  font-weight: 700;
                 }
               }
 
               .write-link {
+                font-weight: 700;
                 color: white;
                 text-decoration: none;
               }
             }
           }
         }
+      }
+    }
+
+    //HOME
+    .home {
+      .posts {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        gap: 50px;
+
+        .post {
+          display: flex;
+          gap: 75px;
+
+          &:nth-child(2n + 1) {
+            //Odd elements will apply reverse
+            flex-direction: row-reverse;
+          }
+
+          .img {
+            flex: 2;
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-color: $lightgren;
+              top: 20px;
+              left: -20px;
+              z-index: -1;
+            }
+
+            img {
+              width: 100%;
+              max-height: 400px;
+              object-fit: cover;
+            }
+          }
+
+          .content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h1 {
+              margin: 0px;
+            }
+          }
+        }
+      }
+    }
+
+    .single {
+      display: flex;
+      gap: 50px;
+
+      .content {
+        flex: 5;
+
+        img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          gap: 20px;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .info {
+            p {
+              margin: 0px;
+            }
+          }
+
+          .edit-remove {
+            display: flex;
+            gap: 5px;
+            img {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        h1 {
+          font-size: 30px;
+          margin-bottom: 0px;
+          color: #555;
+        }
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+
+          h2 {
+            color: #555;
+            margin: 5px 0px;
+          }
+        }
+      }
+
+      h1 {
+        font-size: 42px;
+        color: #333;
+      }
+
+      p {
+        text-align: justify;
+        line-height: 24px;
+      }
+    }
+
+    //FOOTER
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 100px;
+      padding: 20px;
+      background-color: $lightgren;
+      font-size: 12px;
+      margin-top: 40px;
+
+      img {
+        height: 50px;
+      }
+
+      span {
+        font-size: 16px;
       }
     }
   }
@@ -130,4 +288,20 @@ $errorRed: #d54a46;
   color: $errorRed;
   font-size: 12px;
   text-align: center;
+}
+
+.button-read-more {
+  width: max-content;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid teal;
+  color: teal;
+
+  &:hover {
+    border: 1px solid white;
+    background-color: $lightgren;
+    color: black;
+  }
 }
