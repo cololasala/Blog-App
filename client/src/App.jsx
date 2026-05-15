@@ -12,7 +12,10 @@ const Layout = () => {
   return (
     <div className="layout-container">
       <NavBar />
-      <Outlet />
+      <main className="main-content">
+        <Outlet />
+      </main>
+
       <Footer />
     </div>
   );
@@ -31,6 +34,10 @@ const router = createBrowserRouter([
         path: "/single",
         element: <Single />,
       },
+      {
+        path: "/write",
+        element: <Write />,
+      },
     ],
   },
   {
@@ -40,10 +47,6 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
-  },
-  {
-    path: "/write",
-    element: <Write />,
   },
 ]);
 

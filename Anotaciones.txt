@@ -7,3 +7,5 @@ vamos a utilizar react router dom declarative -> https://reactrouter.com/start/m
 para estilos usaremos sass -> npm install sass
 
 cuando se importan images del assets se debe reiniciar para que tome los cambios
+
+se instalo -> npm i react-quill

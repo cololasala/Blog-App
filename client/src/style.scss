@@ -3,7 +3,7 @@ $errorRed: #d54a46;
 
 .app {
   .container {
-    //Login and register
+    //Login and register PAGES
     .auth {
       display: flex;
       flex-direction: column;
@@ -53,11 +53,12 @@ $errorRed: #d54a46;
       }
     }
 
-    //Navbar
+    //NAVBAR
     .layout-container {
       display: flex;
       flex-direction: column;
       padding: 30px 200px;
+      min-height: 100vh;
       .navbar {
         .container {
           display: flex;
@@ -86,31 +87,26 @@ $errorRed: #d54a46;
             span {
               cursor: pointer;
             }
-            .span-write {
-              padding: 20px;
-              height: 18px;
-              width: 18px;
-              border-radius: 50%;
-              background-color: $lightgren;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border: 2px solid $lightgren;
+            .write-link {
+              text-decoration: none;
 
-              &:hover {
-                background-color: white;
-                color: $lightgren;
-                .write-link {
-                  color: $lightgren;
-                  text-decoration: none;
-                  font-weight: 700;
-                }
-              }
-
-              .write-link {
+              .span-write {
+                padding: 20px;
+                height: 18px;
+                width: 18px;
+                border-radius: 50%;
+                background-color: $lightgren;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid $lightgren;
                 font-weight: 700;
                 color: white;
-                text-decoration: none;
+
+                &:hover {
+                  background-color: white;
+                  color: $lightgren;
+                }
               }
             }
           }
@@ -118,7 +114,7 @@ $errorRed: #d54a46;
       }
     }
 
-    //HOME
+    //HOME PAGE
     .home {
       .posts {
         display: flex;
@@ -276,12 +272,28 @@ $errorRed: #d54a46;
         font-size: 16px;
       }
     }
+
+    //WRITE PAGE
+    .write {
+      // al ser un flex y tener dos hijos con 5 y 2, el primero ocupa 5/7 espacios y el segundo 2/7 (es una manera de acomodar los elementos)
+      display: flex;
+      gap: 20px;
+
+      .content {
+        flex: 5;
+      }
+
+      .menu {
+        flex: 2;
+      }
+    }
   }
 }
 
 .register-link {
   color: teal;
   text-decoration: none;
+  margin-left: 3px;
 }
 
 .error-text {
@@ -304,4 +316,8 @@ $errorRed: #d54a46;
     background-color: $lightgren;
     color: black;
   }
+}
+
+.main-content {
+  flex: 1; /* Se estira para ocupar el espacio sobrante y empuja al footer */
 }
