@@ -14,8 +14,13 @@ const TipTap = () => {
       Underline,
       Image,
     ],
-    content: "<p>hello world</p>",
+    content: "<p>Write your article here!</p>",
     autofocus: "end",
+    onUpdate: ({ editor }) => {
+      const html = editor.getHTML();
+      console.log(html);
+      // console.log(editor.getText())
+    },
   });
 
   if (!editor) return <p>Loading...</p>;
@@ -45,18 +50,6 @@ const TipTap = () => {
 
         <button onClick={() => editor.chain().focus().toggleBulletList().run()}>
           List
-        </button>
-
-        <button
-          onClick={() => {
-            const url = window.prompt("URL de la imagen");
-
-            if (url) {
-              editor.chain().focus().setImage({ src: url }).run();
-            }
-          }}
-        >
-          Image
         </button>
       </div>
 

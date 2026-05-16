@@ -4,6 +4,7 @@ $errorRed: #d54a46;
 .app {
   .container {
     //Login and register PAGES
+    font-family: "Montserrat", sans-serif;
     .auth {
       display: flex;
       flex-direction: column;
@@ -281,10 +282,38 @@ $errorRed: #d54a46;
 
       .content {
         flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .input-title {
+          border: 1px solid $lightgren;
+          padding: 10px;
+          font-family: "Montserrat", sans-serif;
+
+          &:focus {
+            outline: none; //previene el borde negro por defecto del navegador
+            border: 1px solid teal;
+          }
+        }
+
+        .editor-container {
+          height: 450px;
+          overflow: scroll;
+        }
       }
 
-      .menu {
+      .menu-items {
         flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .item {
+          h1 {
+            margin: 0px;
+          }
+        }
       }
     }
   }
@@ -320,4 +349,8 @@ $errorRed: #d54a46;
 
 .main-content {
   flex: 1; /* Se estira para ocupar el espacio sobrante y empuja al footer */
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
 }
