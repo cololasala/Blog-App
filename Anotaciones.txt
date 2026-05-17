@@ -9,3 +9,11 @@ para estilos usaremos sass -> npm install sass
 cuando se importan images del assets se debe reiniciar para que tome los cambios
 
 se instalo -> npm i react-quill
+
+en api/ tiramos npm init -y -> inicializamos nuestro proyecto
+en package.json se agrega "type": "module", para que se pueda usar import de modules eje-> import express from "express"
+creamos base de datos blog-app, tables users y posts, un user puede tener 1..* posts, foreign key en posts, si eliminamos
+user se eliminan todos sus post
+
+Node js
+Usamos nodemom, 

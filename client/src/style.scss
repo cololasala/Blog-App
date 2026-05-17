@@ -310,8 +310,49 @@ $errorRed: #d54a46;
         gap: 20px;
 
         .item {
+          display: flex;
+          flex-direction: column;
+          border: 1px solid lightgray;
+          padding: 10px;
+          border-radius: 5px;
+          gap: 5px;
+
+          .category {
+            display: "flex";
+            align-items: "center";
+            margin-bottom: 5;
+          }
+
+          .label-file {
+            cursor: pointer;
+            color: gray;
+            text-decoration: lightgray underline;
+          }
+
           h1 {
             margin: 0px;
+          }
+
+          .buttons-container {
+            margin-top: 2px;
+            display: flex;
+            justify-content: space-between;
+
+            :first-child {
+              cursor: pointer;
+              color: teal;
+              background-color: white;
+              border: 1px solid teal;
+              padding: 4px 5px;
+            }
+
+            :last-child {
+              cursor: pointer;
+              color: white;
+              background-color: teal;
+              border: 1px solid teal;
+              padding: 4px 5px;
+            }
           }
         }
       }

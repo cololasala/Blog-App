@@ -48,24 +48,18 @@ const Write = () => {
             name=""
             id="file-image"
           />
-          <label htmlFor="file-image">Upload image</label>
-          <div className="buttons">
+          <label className="label-file" htmlFor="file-image">
+            Upload image
+          </label>
+          <div className="buttons-container">
             <button>Save as a draft</button>
             <button>Update image</button>
           </div>
         </div>
         <div className="item">
           <h1>Category</h1>
-
           {categories.map((category) => (
-            <div
-              key={category.value}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: 5,
-              }}
-            >
+            <div key={category.value} className="category">
               <input
                 style={{ marginTop: 0 }}
                 type="radio"
