@@ -15,5 +15,11 @@ en package.json se agrega "type": "module", para que se pueda usar import de mod
 creamos base de datos blog-app, tables users y posts, un user puede tener 1..* posts, foreign key en posts, si eliminamos
 user se eliminan todos sus post
 
+------------------------------------------------------------------------------------------
 Node js
-Usamos nodemom, 
+Usamos nodemom, para encriptacion de password usamos npm i bcryptjs, usamos mysql2 para conectar a mysql,
+jswebtoken, 
+
+cookie-parser -> es un middleware de Node.js que analiza el encabezado de las cookies de las solicitudes
+entrantes y las expone como un objeto JSON fácil de usar en req.cookies. Nosotros lo usamos para ocultar el
+access_token enviado al user al iniciar sesion.

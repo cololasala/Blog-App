@@ -88,6 +88,12 @@ $errorRed: #d54a46;
             span {
               cursor: pointer;
             }
+
+            .login-link {
+              text-decoration: none;
+              color: black;
+            }
+
             .write-link {
               text-decoration: none;
 
@@ -160,8 +166,13 @@ $errorRed: #d54a46;
             flex-direction: column;
             justify-content: space-between;
 
+            .link {
+              text-decoration: none;
+            }
+
             h1 {
               margin: 0px;
+              color: black;
             }
           }
         }
@@ -394,4 +405,10 @@ $errorRed: #d54a46;
 
 button {
   font-family: "Montserrat", sans-serif;
+}
+
+.error-form {
+  margin: 0px;
+  color: $errorRed;
+  font-size: 14px;
 }
