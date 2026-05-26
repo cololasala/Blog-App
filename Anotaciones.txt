@@ -23,3 +23,5 @@ jswebtoken,
 cookie-parser -> es un middleware de Node.js que analiza el encabezado de las cookies de las solicitudes
 entrantes y las expone como un objeto JSON fácil de usar en req.cookies. Nosotros lo usamos para ocultar el
 access_token enviado al user al iniciar sesion.
+
+npm install moment -> manejo de fechas

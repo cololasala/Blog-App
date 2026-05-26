@@ -12,22 +12,22 @@ const NavBar = () => {
           <img src={Logo} width={120} alt="logo-image" />
         </div>
         <div className="links">
-          <Link to="/" className="link">
+          <Link to="/art" className="link">
             ART
           </Link>
-          <Link to="/" className="link">
+          <Link to="/science" className="link">
             SCIENCE
           </Link>
-          <Link to="/" className="link">
+          <Link to="/technology" className="link">
             TECHNOLOGY
           </Link>
-          <Link to="/" className="link">
+          <Link to="/cinema" className="link">
             CINEMA
           </Link>
-          <Link to="/" className="link">
+          <Link to="/design" className="link">
             DESIGN
           </Link>
-          <Link to="/" className="link">
+          <Link to="/food" className="link">
             FOOD
           </Link>
 

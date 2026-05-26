@@ -1,52 +1,36 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const BASE_URL = "/api/posts";
 
 const Home = () => {
-  const posts: any = [
-    {
-      id: 1,
-      title: "Introducción a React",
-      description:
-        "Aprendé los conceptos básicos de React y cómo crear componentes reutilizables.",
-      image:
-        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      id: 2,
-      title: "Guía de TypeScript",
-      description:
-        "Descubrí cómo TypeScript mejora la calidad y mantenibilidad de tu código.",
-      image:
-        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      id: 3,
-      title: "Backend con Node.js",
-      description:
-        "Creá APIs rápidas y escalables utilizando Express y Node.js.",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      id: 4,
-      title: "Diseño Responsive",
-      description:
-        "Aprendé técnicas modernas para adaptar tus páginas a cualquier dispositivo.",
-      image:
-        "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      id: 5,
-      title: "Bases de Datos SQL",
-      description:
-        "Conocé cómo trabajar con MySQL y realizar consultas eficientes.",
-      image:
-        "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1200&auto=format&fit=crop",
-    },
-  ];
+  const [posts, setPosts] = useState<any>([]);
+  const location = useLocation();
+  const category = location.pathname.split("/")[1];
+  const navigation = useNavigate();
+
+  useEffect(() => {
+    getPosts();
+  }, [category]);
+
+  const getPosts = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}?cat=${category}`);
+      setPosts(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  if (!posts) {
+    return null;
+  }
+
   return (
     <div className="home">
       <div className="posts">
-        {posts.map((post: any) => (
+        {posts?.map((post: any) => (
           <div className="post" key={post.id}>
             <div className="img">
               <img src={post.image} alt="post-image" />
@@ -57,7 +41,10 @@ const Home = () => {
               </Link>
 
               <p>{post.description}</p>
-              <button className="button-read-more" onClick={() => {}}>
+              <button
+                className="button-read-more"
+                onClick={() => navigation(`/post/${post.id}`)}
+              >
                 Read more
               </button>
             </div>
