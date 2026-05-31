@@ -1,5 +1,6 @@
 import Edit from "../assets/edit.png";
 import Delete from "../assets/delete.png";
+import Avatar from "../assets/avatar.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Menu from "../components/Menu";
 import { useContext, useEffect, useState } from "react";
@@ -49,9 +50,13 @@ const Single = () => {
   return (
     <div className="single">
       <div className="content">
-        <img src={post?.image} />
+        <img
+          src={`../../upload/${post.post_image}`}
+          style={{ objectFit: "contain" }}
+          alt="post-image"
+        />
         <div className="user">
-          <img src="" />
+          <img src={Avatar} alt="avatar" />
           <div className="info">
             <span>{post?.username}</span>
             <p>Posted {moment(post.created_at).fromNow()}</p>
@@ -59,7 +64,7 @@ const Single = () => {
 
           {postActions() && (
             <div className="edit-remove">
-              <Link to={`/write?edit=2`}>
+              <Link to={`/write?edit=${post.post_id}`} state={post}>
                 <img src={Edit} />
               </Link>
               <img src={Delete} onClick={onDeletePost} />

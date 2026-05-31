@@ -25,3 +25,4 @@ entrantes y las expone como un objeto JSON fácil de usar en req.cookies. Nosotr
 access_token enviado al user al iniciar sesion.
 
 npm install moment -> manejo de fechas
+npm i multer -> es un middleware de node js para subir archivos 

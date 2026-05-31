@@ -1,15 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
 
 const NavBar = () => {
   const { currentUser, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   return (
     <div className="navbar">
       <div className="container">
         <div className="logo">
-          <img src={Logo} width={120} alt="logo-image" />
+          <img
+            src={Logo}
+            width={120}
+            alt="logo-image"
+            onClick={() => navigate("/")}
+          />
         </div>
         <div className="links">
           <Link to="/art" className="link">

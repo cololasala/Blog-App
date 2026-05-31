@@ -3,8 +3,14 @@ import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import Image from "@tiptap/extension-image";
 import "./TipTap.styles.scss";
+import { useEffect } from "react";
 
-const TipTap = () => {
+interface ITipTapProps {
+  initialDescription: string;
+  onChangeDescription: (text: string) => void;
+}
+
+const TipTap = ({ initialDescription, onChangeDescription }: ITipTapProps) => {
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -14,12 +20,12 @@ const TipTap = () => {
       Underline,
       Image,
     ],
-    content: "<p>Write your article here!</p>",
+    content: initialDescription,
     autofocus: "end",
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
-      console.log(html);
-      // console.log(editor.getText())
+      // console.log(editor.getText());
+      onChangeDescription(editor.getText());
     },
   });
 
