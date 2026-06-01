@@ -2,41 +2,40 @@ const Menu = () => {
   const posts = [
     {
       id: 1,
-      title: "Introducción a React",
+      title: "Introduction to React",
       description:
-        "Aprendé los conceptos básicos de React y cómo crear componentes reutilizables.",
+        "Learn the fundamentals of React and how to build reusable components.",
       image:
         "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: 2,
-      title: "Guía de TypeScript",
+      title: "TypeScript Guide",
       description:
-        "Descubrí cómo TypeScript mejora la calidad y mantenibilidad de tu código.",
+        "Discover how TypeScript improves the quality and maintainability of your code.",
       image:
         "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: 3,
-      title: "Backend con Node.js",
-      description:
-        "Creá APIs rápidas y escalables utilizando Express y Node.js.",
+      title: "Backend with Node.js",
+      description: "Build fast and scalable APIs using Express and Node.js.",
       image:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: 4,
-      title: "Diseño Responsive",
+      title: "Responsive Design",
       description:
-        "Aprendé técnicas modernas para adaptar tus páginas a cualquier dispositivo.",
+        "Learn modern techniques to make your websites adapt to any device.",
       image:
         "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: 5,
-      title: "Bases de Datos SQL",
+      title: "SQL Databases",
       description:
-        "Conocé cómo trabajar con MySQL y realizar consultas eficientes.",
+        "Learn how to work with MySQL and write efficient database queries.",
       image:
         "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1200&auto=format&fit=crop",
     },

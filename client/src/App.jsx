@@ -6,11 +6,13 @@ import NavBar from "./components/NavBar";
 import Single from "./pages/Single";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import ScrollToTop from "./shared/ScrollToTop";
 import "./style.scss";
 
 const Layout = () => {
   return (
     <div className="layout-container">
+      <ScrollToTop />
       <NavBar />
       <main className="main-content">
         <Outlet />

@@ -26,7 +26,7 @@ const Single = () => {
       const response = await axios.get(`${BASE_URL}/${postId}`);
       setPost(response.data);
     } catch (error) {
-      console.log(error);
+      console.warn(error);
     }
   };
 
@@ -43,7 +43,7 @@ const Single = () => {
       await axios.delete(`${BASE_URL}/${postId}`);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      console.warn(error);
     }
   };
 
@@ -72,7 +72,7 @@ const Single = () => {
           )}
         </div>
         <h1>{post.title}</h1>
-        <p>{post.description}</p>
+        <p dangerouslySetInnerHTML={{ __html: post.description }} />
       </div>
       <Menu />
     </div>

@@ -10,6 +10,9 @@ cuando se importan images del assets se debe reiniciar para que tome los cambios
 
 se instalo -> npm i react-quill
 
+se creo un archivo dentro src llamado vite-env.d.ts donde le decimos a typescript que interprete bien los modules de estilos
+e imagenes
+
 en api/ tiramos npm init -y -> inicializamos nuestro proyecto
 en package.json se agrega "type": "module", para que se pueda usar import de modules eje-> import express from "express"
 creamos base de datos blog-app, tables users y posts, un user puede tener 1..* posts, foreign key en posts, si eliminamos

@@ -3,7 +3,6 @@ import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import Image from "@tiptap/extension-image";
 import "./TipTap.styles.scss";
-import { useEffect } from "react";
 
 interface ITipTapProps {
   initialDescription: string;
@@ -24,8 +23,7 @@ const TipTap = ({ initialDescription, onChangeDescription }: ITipTapProps) => {
     autofocus: "end",
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
-      // console.log(editor.getText());
-      onChangeDescription(editor.getText());
+      onChangeDescription(editor.getHTML());
     },
   });
 

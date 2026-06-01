@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Empty from "../assets/empty-posts.png";
 
 const BASE_URL = "/api/posts";
 
@@ -19,12 +20,24 @@ const Home = () => {
       const response = await axios.get(`${BASE_URL}?cat=${category}`);
       setPosts(response.data);
     } catch (error) {
-      console.log(error);
+      console.warn(error);
     }
   };
 
-  if (!posts) {
-    return null;
+  if (posts?.length === 0) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          marginTop: 100,
+        }}
+      >
+        <img src={Empty} width={360} height={300} />
+      </div>
+    );
   }
 
   return (
@@ -40,7 +53,7 @@ const Home = () => {
                 <h1>{post.title}</h1>
               </Link>
 
-              <p>{post.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: post.description }} />
               <button
                 className="button-read-more"
                 onClick={() => navigation(`/post/${post.id}`)}

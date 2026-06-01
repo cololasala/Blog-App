@@ -86,7 +86,6 @@ export const editPost = (req, res) => {
     if (err) return res.status(403).json("Invalid token");
     const { id } = req.params;
 
-    console.log(id, userInfo.id);
     const query =
       "UPDATE posts SET `title`= ?, `description`= ?,`category`= ?,`image`= ? WHERE `id`= ? AND `user_id` = ? ";
 

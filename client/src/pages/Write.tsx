@@ -40,7 +40,7 @@ const Write = () => {
     { label: "Food", value: "food" },
   ];
 
-  const setBlogDesctiption = (text: string) => {
+  const setBlogDescription = (text: string) => {
     setDescription(text);
   };
 
@@ -85,7 +85,7 @@ const Write = () => {
           className="input-title"
           type="text"
           name="title"
-          id="titel"
+          id="title"
           placeholder="Article title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -94,7 +94,7 @@ const Write = () => {
           <TipTap
             key={state?.id ? `edit-${state?.id}` : "create-new-post"}
             initialDescription={description}
-            onChangeDescription={setBlogDesctiption}
+            onChangeDescription={setBlogDescription}
           />
         </div>
         <div style={{ display: "flex", gap: 10 }}>
