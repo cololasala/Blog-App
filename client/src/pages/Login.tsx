@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <div className="auth">
-      <h2>Login</h2>
+      <h2>Blog App Login</h2>
       <form>
         <input
           required

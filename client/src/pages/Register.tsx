@@ -33,7 +33,7 @@ const Register = () => {
       password,
     };
     try {
-      const response = await axios.post(`${BASE_URL}/register`, requestBody);
+      await axios.post(`${BASE_URL}/register`, requestBody);
       setErrorForm("");
       navigate("/login");
     } catch (error: any) {
@@ -49,7 +49,7 @@ const Register = () => {
 
   return (
     <div className="auth">
-      <h2>Register</h2>
+      <h2>Blog App Register</h2>
       <form>
         <input
           required

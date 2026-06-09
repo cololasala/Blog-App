@@ -23,12 +23,18 @@ const Write = () => {
   );
   const [imageFile, setImageFile] = useState<any>(null);
   const [postId, setPostId] = useState<number | null>(state?.post_id ?? null);
+  const [loadingTipTap, setLoadingTitTap] = useState<boolean>(true);
 
   useEffect(() => {
+    setLoadingTitTap(true);
     setTitle(state?.title ?? "");
-    setDescription("");
+    setDescription(state?.description ?? "Write your article here!");
     setImageFile(state?.post_image ?? null);
     setSelectedCategory(state?.category ?? "");
+
+    setTimeout(() => {
+      setLoadingTitTap(false);
+    }, 100);
   }, [state]);
 
   const categories: ICategory[] = [
@@ -57,7 +63,7 @@ const Write = () => {
 
   const onSaveAsDraft = () => {};
 
-  const onPublish = (e: any) => {
+  const onPublish = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     try {
       const body = {
@@ -90,13 +96,16 @@ const Write = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <div className="editor-container">
-          <TipTap
-            key={state?.id ? `edit-${state?.id}` : "create-new-post"}
-            initialDescription={description}
-            onChangeDescription={setBlogDescription}
-          />
-        </div>
+
+        {!loadingTipTap ? (
+          <div className="editor-container">
+            <TipTap
+              initialDescription={description}
+              onChangeDescription={setBlogDescription}
+            />
+          </div>
+        ) : null}
+
         <div style={{ display: "flex", gap: 10 }}>
           <button
             className="secondary-button"
